@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Kết nối FW w3.css bằng link liên kết -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Lấy font chữ google bằng liên kết -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="java.js">
+    <title>Photo Porfolio</title>
+</head>
+<script>
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none  ";
+    }
+    function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+    }
+</script>
+
+<body class="w3-black">
+    <!-- Tạo thanh menu  -->
+    <nav class="w3-sidebar w3-bar-block w3-gray w3-animate-right w3-top w3-large w3-text-white "
+        style="z-index:3; width: 250px; font-weight: bold; right: 0; display: none;" id="mySidebar">
+        <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">Close</a>
+        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">Portfolio</a>
+        <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">About Me</a>
+        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">Contact</a>
+    </nav>
+    <!-- Tạo menu -->
+    <header class="w3-container w3-top w3-white w3-padding-16 w3-xlarge">
+        <span class="w3-left w3-padding">JONNYDANG</span>
+        <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+    </header>
+    <!-- HIệu ứng hiển thị menu -->
+    <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor: pointer;" title="close side menu"
+        id="myOverlay"></div>
+
+    <!-- Page -->
+    <div class="w3-main w3-content" style="margin-top: 83px; max-width: 1600px;"></div>
+    <div class="w3-row w3-grayscale-min">
+        <div class="w3-quarter">
+            <img src="img/1.JPG" style="width: 100%;" onclick="onClick(this)" alt="Wedding">
+            <img src="img/2.JPG" style="width: 100%;" onclick="onClick(this)" alt="Wedding">
+            <img src="img/3.JPG" style="width: 100%;" onclick="onClick(this)" alt="Wedding">
+        </div>
+
+        <div class="w3-quarter">
+            <img src="img/c.png" style="width: 100%;" onclick="onClick(this)" alt="Wedding">
+            <img src="img/b.png" style="width: 100%;" onclick="onClick(this)" alt="Wedding">
+            <img src="img/a.png" style="width: 100%;" onclick="onClick(this)" alt="Wedding">
+        </div>
+
+        <div class="w3-quarter">
+            <img src="img/7.jpg" style="width: 100%;" onclick="onClick(this)" alt="Wedding">
+            <img src="img/8.JPG" style="width: 100%;" onclick="onClick(this)" alt="Wedding">
+            <img src="img/9.JPG" style="width: 100%;" onclick="onClick(this)" alt="Wedding">
+        </div>
+
+        <div class="w3-quarter">
+            <img src="img/IMG_7550.png" style="width: 100%;" onclick="onClick(this)" alt="Wedding">
+            <img src="img/IMG_7565.JPG" style="width: 100%;" onclick="onClick(this)" alt="Wedding">
+            <img src="img/IMG_7568.png" style="width: 100%;" onclick="onClick(this)" alt="Wedding">
+        </div>
+    </div>
+
+    <div class="w3-center w3-padding-32">
+        <div class="w3-bar">
+            <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+            <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+        </div>
+    </div>
+    <!-- Hiệu ứng coi hình -->
+    <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+        <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+            <img id="img01" class="w3-image">
+            <p id="caption"></p>
+        </div>
+    </div>
+    <!-- Thông tin  -->
+    <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
+        <h4><b>About Me</b></h4>
+        <img src="/img/me.png" alt="Me" class="w3-image w3-padding-32" width="600" height="650">
+        <div class="w3-content w3-justify" style="max-width:600px">
+            <h4>Hoài Đặng</h4>
+            <p>Một vài thứ về tôi, tôi là một người thích chụp hình lý do đơn giản là vì tôi muốn đóng băng lại một
+                khoảng khắc nào đó một cách sáng tạo và đẹp nhất để sau này khi bản thân hoặc một người khác nhìn dô thì
+                sẽ hình dung được câu chuyện đang kể trong bức ảnh theo phong cách của tôi.
+            </p>
+            <p>mail: DangFreelancer@gmail.com </p>
+            <p>tel: 0856852562</p>
+            <hr class="w3-opacity">
+            <h4 class="w3-padding-16">Các kỹ năng</h4>
+            <p class="w3-wide">Photography</p>
+            <div class="w3-white">
+                <div class="w3-container w3-padding-small w3-center w3-grey" style="width:95%">95%</div>
+            </div>
+            <p class="w3-wide">Web Design</p>
+            <div class="w3-white">
+                <div class="w3-container w3-padding-small w3-center w3-grey" style="width:85%">85%</div>
+            </div>
+            <p class="w3-wide">Photoshop</p>
+            <div class="w3-white">
+                <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
+            </div>
+
+            <hr class="w3-opacity">
+
+            <h4 class="w3-padding-16">Bảng giá</h4>
+            <div class="w3-row-padding" style="margin:0 -16px">
+                <div class="w3-half w3-margin-bottom">
+                    <ul class="w3-ul w3-white w3-center">
+                        <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
+                        <li class="w3-padding-16">Chụp ảnh có giới hạn file</li>
+                        <li class="w3-padding-16">Xử lý</li>
+                        <li class="w3-padding-16">1 ablum 2 hình cổng</li>
+                        <li class="w3-padding-16">
+                            <h2>$ 150</h2>
+                            <span class="w3-opacity">/Buổi</span>
+                        </li>
+                        <li class="w3-light-grey w3-padding-24">
+                            <button class="w3-button w3-white w3-padding-large">Sign Up</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="w3-half">
+                    <ul class="w3-ul w3-white w3-center">
+                        <li class="w3-black w3-xlarge w3-padding-32">Pro</li>
+                        <li class="w3-padding-16">Chụp không giới hạn file</li>
+                        <li class="w3-padding-16">Gửi toàn bộ file gốc</li>
+                        <li class="w3-padding-16">Xử lý</li>
+                        <li class="w3-padding-16">1 ablum 2 hình cổng 6 hình để bàn</li>
+                        <li class="w3-padding-16">
+                            <h2>$ 500</h2>
+                            <span class="w3-opacity">/Buổi</span>
+                        </li>
+                        <li class="w3-light-grey w3-padding-24">
+                            <button class="w3-button w3-white w3-padding-large">Sign Up</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+        <div class="w3-content" style="max-width:600px">
+            <h4 class="w3-center"><b>Booking</b></h4>
+            <form action="/action_page.php" target="_blank">
+                <div class="w3-section">
+                    <label>Tên</label>
+                    <input class="w3-input w3-border" type="text" name="Name" required>
+                </div>
+                <div class="w3-section">
+                    <label>Email</label>
+                    <input class="w3-input w3-border" type="text" name="Email" required>
+                </div>
+                <div class="w3-section">
+                    <label>SĐT</label>
+                    <input class="w3-input w3-border" type="text" name="Message" required>
+                </div>
+                <button type="submit" class="w3-button w3-block w3-black w3-margin-bottom">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <footer class="w3-container w3-padding-32 w3-grey">
+        <div class="w3-center w3-padding-8">
+            <div>
+                <p style="font-weight: bolder;">Bản quyền &copy; bởi DangFreelancer</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
